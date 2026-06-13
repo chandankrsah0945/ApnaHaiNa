@@ -7,7 +7,7 @@ export default function Portfolio() {
       description:
         "A secure password manager with encrypted storage and authentication.",
       tech: "PHP • MySQL • Cyber Security",
-      image: "/images/password-manager.png",
+      image: "/images/password-mgr.png",
       github: "https://github.com/chandankrsah0945",
       demo: "#",
     },
