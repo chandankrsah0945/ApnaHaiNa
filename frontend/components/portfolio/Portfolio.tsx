@@ -1,16 +1,33 @@
+import Image from "next/image";
+
 export default function Portfolio() {
   const projects = [
     {
-      title: "Business Website",
-      tech: "Next.js • Tailwind",
+      title: "Password Management Tool",
+      description:
+        "A secure password manager with encrypted storage and authentication.",
+      tech: "PHP • MySQL • Cyber Security",
+      image: "/images/password-manager.png",
+      github: "https://github.com/chandankrsah0945",
+      demo: "#",
     },
     {
-      title: "AI Chatbot",
-      tech: "OpenAI • Node.js",
+      title: "AI Web Application",
+      description:
+        "Modern AI-powered web application built with Next.js and OpenAI.",
+      tech: "Next.js • OpenAI API • AI",
+      image: "/images/ai-web-app.png",
+      github: "https://github.com/chandankrsah0945",
+      demo: "#",
     },
     {
       title: "Cyber Security Dashboard",
-      tech: "MERN • MongoDB",
+      description:
+        "Security analytics and monitoring dashboard for threat management.",
+      tech: "Python • Flask • Security Analytics",
+      image: "/images/cyber-dashboard.png",
+      github: "https://github.com/chandankrsah0945",
+      demo: "#",
     },
   ];
 
@@ -29,15 +46,36 @@ export default function Portfolio() {
           Featured Projects
         </h2>
 
+        <p className="text-gray-400 mt-4 max-w-2xl">
+          Some of my recent projects in Full Stack Development,
+          Artificial Intelligence, and Cyber Security.
+        </p>
+
         <div className="grid md:grid-cols-3 gap-8 mt-16">
 
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition duration-300"
+              className="
+              bg-slate-800
+              rounded-2xl
+              overflow-hidden
+              transition-all
+              duration-300
+              hover:-translate-y-2
+              hover:scale-105
+              hover:shadow-2xl
+              hover:shadow-cyan-500/20
+              "
             >
 
-              <div className="h-52 bg-gradient-to-br from-cyan-500 to-slate-900"></div>
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={500}
+                height={300}
+                className="w-full h-52 object-cover"
+              />
 
               <div className="p-6">
 
@@ -46,12 +84,50 @@ export default function Portfolio() {
                 </h3>
 
                 <p className="text-gray-400 mt-3">
+                  {project.description}
+                </p>
+
+                <p className="text-cyan-400 mt-4 font-medium">
                   {project.tech}
                 </p>
 
-                <button className="mt-6 border border-cyan-400 text-cyan-400 px-5 py-2 rounded-lg hover:bg-cyan-400 hover:text-black transition">
-                  View Project
-                </button>
+                <div className="flex gap-4 mt-6">
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                    border
+                    border-cyan-400
+                    text-cyan-400
+                    px-5
+                    py-2
+                    rounded-lg
+                    hover:bg-cyan-400
+                    hover:text-black
+                    transition
+                    "
+                  >
+                    GitHub
+                  </a>
+
+                  <a
+                    href={project.demo}
+                    className="
+                    bg-cyan-500
+                    text-black
+                    px-5
+                    py-2
+                    rounded-lg
+                    hover:bg-cyan-400
+                    transition
+                    "
+                  >
+                    Live Demo
+                  </a>
+
+                </div>
 
               </div>
 
