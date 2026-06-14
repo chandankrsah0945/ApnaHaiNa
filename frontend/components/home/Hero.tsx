@@ -1,120 +1,135 @@
+const stats = [
+  { value: "100+", label: "Projects" },
+  { value: "AI", label: "Powered" },
+  { value: "24/7", label: "Support" },
+  { value: "99%", label: "Satisfaction" },
+];
+
+const capabilityPills = [
+  {
+    title: "Cyber Security",
+    position:
+      "left-0 top-8 sm:left-2 lg:-left-4 lg:top-12 hero-float-slow",
+  },
+  {
+    title: "Web Development",
+    position:
+      "right-0 top-0 sm:right-2 lg:-right-4 lg:top-16 hero-float-medium",
+  },
+  {
+    title: "Automation",
+    position:
+      "bottom-24 left-1 sm:left-6 lg:left-4 hero-float-medium",
+  },
+  {
+    title: "AI Solutions",
+    position:
+      "bottom-8 right-1 sm:right-6 lg:right-4 hero-float-slow",
+  },
+];
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#020617] text-white flex items-center">
-      {/* Background Glow */}
+    <section className="hero-shell relative flex min-h-screen items-center overflow-hidden bg-[#020617] text-white">
+      <div className="hero-mesh absolute inset-0" aria-hidden="true" />
+      <div className="hero-ambient hero-ambient-left" aria-hidden="true" />
+      <div className="hero-ambient hero-ambient-right" aria-hidden="true" />
+      <div className="hero-ambient hero-ambient-bottom" aria-hidden="true" />
 
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[150px] animate-pulse"></div>
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-16 px-6 py-28 sm:px-8 md:py-32 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:px-10">
+        <div className="flex max-w-3xl flex-col">
+          <div className="hero-panel inline-flex w-fit items-center gap-3 rounded-full px-4 py-2">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.85)]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.38em] text-cyan-200/90 sm:text-sm">
+              Welcome To ApnaHaiNa
+            </p>
+          </div>
 
-      <div className="absolute top-20 right-0 w-[450px] h-[450px] rounded-full bg-blue-500/10 blur-[150px] animate-pulse"></div>
-
-      <div className="absolute bottom-0 left-1/3 w-[450px] h-[450px] rounded-full bg-purple-500/10 blur-[150px] animate-pulse"></div>
-
-      {/* Grid */}
-
-      <div className="max-w-7xl mx-auto w-full px-6 grid lg:grid-cols-2 gap-20 items-center relative z-10">
-        {/* LEFT */}
-
-        <div>
-          <p className="text-cyan-400 uppercase tracking-[8px] font-semibold">
-            Welcome To ApnaHaiNa
-          </p>
-
-          <h1 className="text-6xl md:text-7xl font-black leading-tight mt-6 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+          <h1 className="mt-8 max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl xl:text-[5.5rem]">
             Build
-            <span className="text-cyan-400"> Smarter</span>
+            <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              {" "}
+              Smarter
+            </span>
             <br />
             Secure
-            <span className="text-cyan-400"> Faster</span>
+            <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              {" "}
+              Faster
+            </span>
             <br />
             Grow Digitally
           </h1>
 
-          <p className="text-gray-400 text-xl mt-8 leading-10 max-w-xl">
+          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg sm:leading-9 md:text-xl">
             We help startups and businesses build AI applications, secure
             platforms, modern websites and business automation systems.
           </p>
 
-          <div className="flex flex-wrap gap-5 mt-10">
-            <button className="bg-cyan-500 text-black px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all duration-300">
-              Start Your Project
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <button className="hero-button-primary" type="button">
+              <span>Start Your Project</span>
             </button>
 
-            <button className="border border-cyan-400 text-cyan-400 px-8 py-4 rounded-xl hover:bg-cyan-500 hover:text-black transition-all duration-300">
-              Explore Services
+            <button className="hero-button-secondary" type="button">
+              <span>Explore Services</span>
             </button>
           </div>
 
-          {/* Stats */}
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-400">
+            <span className="hero-chip">AI Products</span>
+            <span className="hero-chip">Secure Web Platforms</span>
+            <span className="hero-chip">Business Automation</span>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
-            <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition-all duration-500">
-              <h3 className="text-4xl font-bold text-cyan-400">100+</h3>
-
-              <p className="text-gray-400 mt-2">Projects</p>
-            </div>
-
-            <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition-all duration-500">
-              <h3 className="text-4xl font-bold text-cyan-400">AI</h3>
-
-              <p className="text-gray-400 mt-2">Powered</p>
-            </div>
-
-            <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition-all duration-500">
-              <h3 className="text-4xl font-bold text-cyan-400">24/7</h3>
-
-              <p className="text-gray-400 mt-2">Support</p>
-            </div>
-
-            <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-5 hover:border-cyan-400 transition-all duration-500">
-              <h3 className="text-4xl font-bold text-cyan-400">99%</h3>
-
-              <p className="text-gray-400 mt-2">Satisfaction</p>
-            </div>
+          <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-5 xl:grid-cols-4">
+            {stats.map((stat) => (
+              <article key={stat.label} className="hero-stat-card">
+                <div className="hero-stat-accent" aria-hidden="true" />
+                <h3 className="text-3xl font-black tracking-[-0.04em] text-cyan-300 sm:text-4xl">
+                  {stat.value}
+                </h3>
+                <p className="mt-2 text-sm text-slate-400 sm:text-base">
+                  {stat.label}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
 
-        {/* RIGHT */}
+        <div className="relative flex min-h-[480px] items-center justify-center sm:min-h-[560px] lg:min-h-[640px]">
+          <div className="hero-orbit hero-orbit-outer" aria-hidden="true" />
+          <div className="hero-orbit hero-orbit-middle" aria-hidden="true" />
+          <div className="hero-orbit hero-orbit-inner" aria-hidden="true" />
 
-        <div className="relative flex justify-center items-center h-[650px]">
-          {/* Outer Orbit */}
+          <div className="hero-panel relative flex h-[320px] w-full max-w-[520px] items-center justify-center rounded-[2rem] border border-white/10 bg-slate-950/45 p-6 shadow-[0_30px_80px_rgba(2,6,23,0.65)] backdrop-blur-2xl sm:h-[420px] sm:rounded-[2.25rem]">
+            <div className="absolute inset-6 rounded-[1.75rem] border border-white/6" />
+            <div className="absolute inset-x-10 top-6 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
 
-          <div
-            className="absolute w-[420px] h-[420px] rounded-full border border-cyan-500/20 animate-spin"
-            style={{ animationDuration: "35s" }}
-          />
+            <div className="hero-core-ring absolute h-40 w-40 rounded-full sm:h-52 sm:w-52" />
+            <div className="hero-core-ring hero-core-ring-delayed absolute h-56 w-56 rounded-full sm:h-72 sm:w-72" />
 
-          {/* Inner Orbit */}
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <div className="hero-ai-core">
+                <span className="text-5xl font-black tracking-[-0.08em] text-cyan-100 sm:text-6xl">
+                  AI
+                </span>
+              </div>
+              <p className="mt-6 max-w-xs text-sm leading-6 text-slate-300 sm:text-base">
+                Premium digital solutions across AI, security, web development,
+                and automation.
+              </p>
+            </div>
 
-          <div
-            className="absolute w-[300px] h-[300px] rounded-full border border-cyan-500/30 animate-spin"
-            style={{
-              animationDuration: "20s",
-              animationDirection: "reverse",
-            }}
-          />
-
-          {/* AI Center */}
-
-          <div className="w-44 h-44 rounded-full bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-7xl font-black text-cyan-300 shadow-[0_0_80px_rgba(34,211,238,0.4)] animate-pulse">
-            AI
-          </div>
-
-          {/* Floating Tags */}
-
-          <div className="absolute top-10 left-5 bg-slate-900/80 backdrop-blur-md border border-slate-700 px-6 py-3 rounded-2xl hover:border-cyan-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500">
-            🔒 Cyber Security
-          </div>
-
-          <div className="absolute top-20 right-0 bg-slate-900/80 backdrop-blur-md border border-slate-700 px-6 py-3 rounded-2xl hover:border-cyan-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500">
-            💻 Web Development
-          </div>
-
-          <div className="absolute bottom-20 left-10 bg-slate-900/80 backdrop-blur-md border border-slate-700 px-6 py-3 rounded-2xl hover:border-cyan-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500">
-            ⚡ Automation
-          </div>
-
-          <div className="absolute bottom-5 right-10 bg-slate-900/80 backdrop-blur-md border border-slate-700 px-6 py-3 rounded-2xl hover:border-cyan-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500">
-            🤖 AI Solutions
+            {capabilityPills.map((pill) => (
+              <div
+                key={pill.title}
+                className={`hero-floating-pill absolute ${pill.position}`}
+              >
+                <span className="hero-floating-dot" aria-hidden="true" />
+                <span>{pill.title}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

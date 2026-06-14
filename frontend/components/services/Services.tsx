@@ -1,42 +1,59 @@
-const services = [
+import type { IconType } from "react-icons";
+import {
+  FaArrowRight,
+  FaBolt,
+  FaChartLine,
+  FaCloud,
+  FaLaptopCode,
+  FaLink,
+  FaMobileAlt,
+  FaRobot,
+  FaShieldAlt,
+} from "react-icons/fa";
+
+const services: {
+  icon: IconType;
+  title: string;
+  description: string;
+}[] = [
   {
-    icon: "🤖",
+    icon: FaRobot,
     title: "AI Solutions",
     description:
       "Custom AI applications, chatbots and business automation systems.",
   },
   {
-    icon: "💻",
+    icon: FaLaptopCode,
     title: "Web Development",
     description: "Modern Next.js, MERN Stack and enterprise web applications.",
   },
   {
-    icon: "🔒",
+    icon: FaShieldAlt,
     title: "Cyber Security",
     description: "VAPT, SOC operations, security assessment and consulting.",
   },
   {
-    icon: "⚡",
+    icon: FaBolt,
     title: "Automation",
     description: "Workflow automation and AI-powered productivity systems.",
   },
   {
-    icon: "☁️",
+    icon: FaCloud,
     title: "Cloud Solutions",
     description: "Cloud deployment, DevOps and scalable infrastructure.",
   },
   {
-    icon: "🔗",
+    icon: FaLink,
     title: "API Integration",
     description: "Payment gateways and third-party API integrations.",
   },
   {
-    icon: "📱",
+    icon: FaMobileAlt,
     title: "Mobile Apps",
     description: "Android and cross-platform mobile application development.",
   },
   {
-    icon: "📈",
+    icon: FaChartLine,
     title: "Digital Growth",
     description: "SEO, branding and digital business transformation.",
   },
@@ -44,144 +61,84 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-bg py-24 bg-[#030712]">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-cyan-400 uppercase tracking-[5px] font-semibold text-center">
-          Our Expertise
-        </p>
+    <section
+      id="services"
+      className="section-bg bg-[#030712] px-6 py-24 text-white sm:px-8 lg:px-10"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-slate-950/40 px-4 py-2 backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200 sm:text-sm">
+              Our Expertise
+            </p>
+          </div>
 
-        <h2 className="text-5xl font-bold text-center mt-4">What We Do</h2>
+          <h2 className="mt-6 text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+            What We Do
+          </h2>
 
-        <p className="text-gray-400 text-center max-w-3xl mx-auto mt-6 text-lg">
-          We build AI-powered digital products and secure technology solutions
-          that help businesses innovate and grow.
-        </p>
+          <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg sm:leading-9">
+            We build AI-powered digital products and secure technology solutions
+            that help businesses innovate and grow.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="
-  group
-  relative
-  overflow-hidden
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {services.map((service, index) => {
+            const ServiceIcon = service.icon;
 
-  bg-slate-900/90
+            return (
+              <article
+                key={service.title}
+                className="group relative overflow-hidden rounded-[2rem] border border-slate-800/90 bg-slate-950/70 p-7 shadow-[0_24px_60px_rgba(2,6,23,0.3)] backdrop-blur-xl transition-all duration-400 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_28px_70px_rgba(8,145,178,0.22)] sm:p-8"
+              >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/[0.05] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute -right-14 -top-16 h-36 w-36 rounded-full bg-cyan-400/10 blur-3xl transition-transform duration-500 group-hover:scale-125" />
+                <div className="absolute -bottom-20 left-8 h-24 w-24 rounded-full bg-blue-500/10 blur-3xl transition-transform duration-500 group-hover:scale-125" />
 
-  border
-  border-slate-800
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-4xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10">
+                      <ServiceIcon
+                        aria-hidden="true"
+                        className="text-[2rem] text-cyan-200 transition-colors duration-300 group-hover:text-white"
+                      />
+                    </div>
 
-  rounded-3xl
+                    <div className="flex h-10 min-w-10 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 px-3 text-xs font-semibold tracking-[0.25em] text-slate-500 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-200">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+                  </div>
 
-  p-8
+                  <div className="mt-8 flex-1">
+                    <h3 className="text-2xl font-bold tracking-[-0.03em] text-cyan-300 transition-colors duration-300 group-hover:text-white">
+                      {service.title}
+                    </h3>
 
-  backdrop-blur-sm
+                    <p className="mt-4 text-base leading-8 text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
+                      {service.description}
+                    </p>
+                  </div>
 
-  hover:-translate-y-4
+                  <div className="mt-8 flex items-center justify-between">
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-3 text-sm font-semibold text-cyan-300 transition-all duration-300 group-hover:text-white"
+                    >
+                      <span>Learn More</span>
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/10 text-base transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-300/50 group-hover:bg-cyan-400/20">
+                        <FaArrowRight aria-hidden="true" className="text-sm" />
+                      </span>
+                    </button>
 
-  hover:border-cyan-400
-
-  hover:shadow-[0_0_50px_rgba(34,211,238,0.25)]
-
-  transition-all
-
-  duration-500
-  "
-            >
-              {/* Background Glow */}
-
-              <div
-                className="
-  absolute
-  -top-20
-  -right-20
-
-  w-40
-  h-40
-
-  rounded-full
-
-  bg-cyan-500/10
-
-  blur-3xl
-
-  group-hover:scale-150
-
-  transition-all
-
-  duration-700
-  "
-              ></div>
-
-              <div className="relative z-10">
-                <div
-                  className="
-    text-5xl
-
-    group-hover:scale-125
-
-    transition-all
-
-    duration-500
-    "
-                >
-                  {service.icon}
+                    <span className="h-2 w-2 rounded-full bg-slate-700 transition-all duration-300 group-hover:scale-125 group-hover:bg-cyan-400" />
+                  </div>
                 </div>
-
-                <h3
-                  className="
-    text-2xl
-
-    font-bold
-
-    text-cyan-400
-
-    mt-6
-
-    group-hover:text-white
-
-    transition-all
-    "
-                >
-                  {service.title}
-                </h3>
-
-                <p
-                  className="
-    text-gray-400
-
-    mt-5
-
-    leading-8
-    "
-                >
-                  {service.description}
-                </p>
-
-                <button
-                  className="
-      mt-8
-
-      text-cyan-400
-
-      font-semibold
-
-      inline-block
-
-      group-hover:translate-x-3
-
-      group-hover:text-white
-
-      transition-all
-
-      duration-300
-      "
-                >
-                  Learn More →
-                </button>
-              </div>
-            </div>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
