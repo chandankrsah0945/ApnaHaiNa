@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+/* =========================
+   ROOT
+========================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020617;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +16,170 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   GLOBAL
+========================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #020617;
+  color: #ededed;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   PREMIUM BACKGROUND
+========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(34, 211, 238, 0.08),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(59, 130, 246, 0.08),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(168, 85, 247, 0.08),
+      transparent 30%
+    );
+
+  animation: backgroundMove 15s ease-in-out infinite alternate;
+
+  z-index: -2;
+}
+
+/* =========================
+   GRID EFFECT
+========================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.02) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.02) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  z-index: -1;
+}
+
+/* =========================
+   SECTION GLOW
+========================= */
+
+.section-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  top: -100px;
+  left: -100px;
+
+  border-radius: 999px;
+
+  background: rgba(34, 211, 238, 0.08);
+
+  filter: blur(120px);
+
+  animation: floatingGlow1 10s ease-in-out infinite alternate;
+}
+
+.section-bg::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 999px;
+
+  background: rgba(168, 85, 247, 0.06);
+
+  filter: blur(120px);
+
+  animation: floatingGlow2 12s ease-in-out infinite alternate;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes backgroundMove {
+
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-40px, 30px);
+  }
+
+  100% {
+    transform: translate(40px, -30px);
+  }
+
+}
+
+@keyframes floatingGlow1 {
+
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(100px, 50px);
+  }
+
+}
+
+@keyframes floatingGlow2 {
+
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(-80px, -50px);
+  }
+
 }

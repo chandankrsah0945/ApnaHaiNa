@@ -32,27 +32,20 @@ export default function Portfolio() {
   ];
 
   return (
-    <section
-      id="portfolio"
-      className="bg-slate-900 text-white py-24 px-6"
-    >
+    <section id="portfolio" className="section-bg py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto">
-
         <p className="text-cyan-400 uppercase tracking-widest font-semibold">
           Portfolio
         </p>
 
-        <h2 className="text-5xl font-bold mt-4">
-          Featured Projects
-        </h2>
+        <h2 className="text-5xl font-bold mt-4">Featured Projects</h2>
 
         <p className="text-gray-400 mt-4 max-w-2xl">
-          Some of my recent projects in Full Stack Development,
-          Artificial Intelligence, and Cyber Security.
+          Some of my recent projects in Full Stack Development, Artificial
+          Intelligence, and Cyber Security.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
-
           {projects.map((project, index) => (
             <div
               key={index}
@@ -68,7 +61,6 @@ export default function Portfolio() {
               hover:shadow-cyan-500/20
               "
             >
-
               <Image
                 src={project.image}
                 alt={project.title}
@@ -78,21 +70,13 @@ export default function Portfolio() {
               />
 
               <div className="p-6">
+                <h3 className="text-2xl font-bold">{project.title}</h3>
 
-                <h3 className="text-2xl font-bold">
-                  {project.title}
-                </h3>
+                <p className="text-gray-400 mt-3">{project.description}</p>
 
-                <p className="text-gray-400 mt-3">
-                  {project.description}
-                </p>
-
-                <p className="text-cyan-400 mt-4 font-medium">
-                  {project.tech}
-                </p>
+                <p className="text-cyan-400 mt-4 font-medium">{project.tech}</p>
 
                 <div className="flex gap-4 mt-6">
-
                   <a
                     href={project.github}
                     target="_blank"
@@ -126,16 +110,11 @@ export default function Portfolio() {
                   >
                     Live Demo
                   </a>
-
                 </div>
-
               </div>
-
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

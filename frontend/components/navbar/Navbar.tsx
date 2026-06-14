@@ -1,49 +1,67 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
 
-        <div>
+        <Link href="/">
           <h1 className="text-3xl font-bold text-cyan-400 cursor-pointer">
             ApnaHaiNa
           </h1>
-        </div>
+        </Link>
 
         {/* Menu */}
 
         <nav className="hidden md:flex items-center gap-8">
 
-          <a href="#" className="hover:text-cyan-400 transition">
+          <Link
+            href="/"
+            className="hover:text-cyan-400 transition"
+          >
             Home
-          </a>
+          </Link>
 
-          <a href="#" className="hover:text-cyan-400 transition">
+          <Link
+            href="/#about"
+            className="hover:text-cyan-400 transition"
+          >
             About
-          </a>
+          </Link>
 
-          <a href="#" className="hover:text-cyan-400 transition">
+          <Link
+            href="/#services"
+            className="hover:text-cyan-400 transition"
+          >
             Services
-          </a>
+          </Link>
 
-          <a href="#" className="hover:text-cyan-400 transition">
+          <Link
+            href="/portfolio"
+            className="hover:text-cyan-400 transition"
+          >
             Portfolio
-          </a>
+          </Link>
 
-          <a href="#" className="hover:text-cyan-400 transition">
+          <Link
+            href="/#contact"
+            className="hover:text-cyan-400 transition"
+          >
             Contact
-          </a>
+          </Link>
 
-          <button className="bg-cyan-500 px-5 py-2 rounded-lg hover:bg-cyan-400 transition">
+          <Link
+            href="/quote"
+            className="bg-cyan-500 px-5 py-2 rounded-lg hover:bg-cyan-400 transition"
+          >
             Get Quote
-          </button>
+          </Link>
 
         </nav>
 
       </div>
-
     </header>
   );
 }
