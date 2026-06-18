@@ -1,63 +1,7 @@
-import type { IconType } from "react-icons";
-import {
-  FaArrowRight,
-  FaBolt,
-  FaChartLine,
-  FaCloud,
-  FaLaptopCode,
-  FaLink,
-  FaMobileAlt,
-  FaRobot,
-  FaShieldAlt,
-} from "react-icons/fa";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
-const services: {
-  icon: IconType;
-  title: string;
-  description: string;
-}[] = [
-  {
-    icon: FaRobot,
-    title: "AI Solutions",
-    description:
-      "Custom AI applications, chatbots and business automation systems.",
-  },
-  {
-    icon: FaLaptopCode,
-    title: "Web Development",
-    description: "Modern Next.js, MERN Stack and enterprise web applications.",
-  },
-  {
-    icon: FaShieldAlt,
-    title: "Cyber Security",
-    description: "VAPT, SOC operations, security assessment and consulting.",
-  },
-  {
-    icon: FaBolt,
-    title: "Automation",
-    description: "Workflow automation and AI-powered productivity systems.",
-  },
-  {
-    icon: FaCloud,
-    title: "Cloud Solutions",
-    description: "Cloud deployment, DevOps and scalable infrastructure.",
-  },
-  {
-    icon: FaLink,
-    title: "API Integration",
-    description: "Payment gateways and third-party API integrations.",
-  },
-  {
-    icon: FaMobileAlt,
-    title: "Mobile Apps",
-    description: "Android and cross-platform mobile application development.",
-  },
-  {
-    icon: FaChartLine,
-    title: "Digital Growth",
-    description: "SEO, branding and digital business transformation.",
-  },
-];
+import { serviceItems } from "@/components/services/serviceData";
 
 export default function Services() {
   return (
@@ -85,7 +29,7 @@ export default function Services() {
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => {
+          {serviceItems.map((service, index) => {
             const ServiceIcon = service.icon;
 
             return (
@@ -120,18 +64,23 @@ export default function Services() {
                     <p className="mt-4 text-base leading-8 text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
                       {service.description}
                     </p>
+
+                    <div className="mt-6 space-y-2 text-sm text-slate-300">
+                      <p>{service.priceFrom}</p>
+                      <p className="text-slate-500">{service.deliveryTimeline}</p>
+                    </div>
                   </div>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <button
-                      type="button"
+                    <Link
+                      href={service.href}
                       className="inline-flex items-center gap-3 text-sm font-semibold text-cyan-300 transition-all duration-300 group-hover:text-white"
                     >
                       <span>Learn More</span>
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/10 text-base transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-300/50 group-hover:bg-cyan-400/20">
                         <FaArrowRight aria-hidden="true" className="text-sm" />
                       </span>
-                    </button>
+                    </Link>
 
                     <span className="h-2 w-2 rounded-full bg-slate-700 transition-all duration-300 group-hover:scale-125 group-hover:bg-cyan-400" />
                   </div>

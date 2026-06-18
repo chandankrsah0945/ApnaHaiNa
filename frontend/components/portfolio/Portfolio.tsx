@@ -1,7 +1,11 @@
 import Link from "next/link";
 
-import PortfolioCard from "@/components/portfolio/PortfolioCard";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import { portfolioProjects } from "@/components/portfolio/portfolioData";
+
+const featuredPortfolioProjects = portfolioProjects.filter(
+  (project) => project.featured !== false,
+);
 
 export default function Portfolio() {
   return (
@@ -28,11 +32,7 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {portfolioProjects.map((project) => (
-            <PortfolioCard key={project.title} project={project} />
-          ))}
-        </div>
+        <PortfolioGrid projects={featuredPortfolioProjects} />
 
         <div className="mt-14 flex justify-center">
           <Link

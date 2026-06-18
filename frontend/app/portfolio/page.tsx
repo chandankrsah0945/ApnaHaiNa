@@ -2,8 +2,12 @@ import Link from "next/link";
 
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
-import PortfolioCard from "@/components/portfolio/PortfolioCard";
+import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import { portfolioProjects } from "@/components/portfolio/portfolioData";
+
+const featuredPortfolioProjects = portfolioProjects.filter(
+  (project) => project.featured !== false,
+);
 
 export default function PortfolioPage() {
   return (
@@ -72,11 +76,7 @@ export default function PortfolioPage() {
               </p>
             </div>
 
-            <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {portfolioProjects.map((project) => (
-                <PortfolioCard key={project.title} project={project} />
-              ))}
-            </div>
+            <PortfolioGrid projects={featuredPortfolioProjects} />
           </div>
         </section>
 

@@ -1,72 +1,38 @@
+import { socialProofMetrics } from "@/components/shared/companyMetrics";
+
 export default function Stats() {
-  const stats = [
-    {
-      number: "150+",
-      title: "Projects Delivered",
-    },
-    {
-      number: "50+",
-      title: "Happy Clients",
-    },
-    {
-      number: "15+",
-      title: "AI Solutions",
-    },
-    {
-      number: "99%",
-      title: "Client Satisfaction",
-    },
-    {
-      number: "24/7",
-      title: "Support",
-    },
-  ];
-
   return (
-    <section className="bg-slate-900 text-white py-24 px-6">
-
-      <div className="max-w-7xl mx-auto">
-
-        <p className="text-cyan-400 uppercase tracking-widest font-semibold text-center">
-          OUR ACHIEVEMENTS
+    <section className="bg-slate-900 px-6 py-24 text-white">
+      <div className="mx-auto max-w-7xl">
+        <p className="text-center font-semibold uppercase tracking-widest text-cyan-400">
+          SOCIAL PROOF
         </p>
 
-        <h2 className="text-5xl font-bold text-center mt-4">
-          Numbers That Build Trust
+        <h2 className="mt-4 text-center text-5xl font-bold">
+          Why Clients Choose ApnaHaiNa
         </h2>
 
-        <p className="text-gray-400 text-center max-w-3xl mx-auto mt-6">
-          We focus on innovation, security and long-term partnerships
-          that help businesses grow digitally.
+        <p className="mx-auto mt-6 max-w-3xl text-center text-gray-400">
+          Premium delivery is not just about visuals. It is about fast
+          communication, reliable execution and trust you can measure.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-16">
-
-          {stats.map((item, index) => (
+        <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {socialProofMetrics.map((metric) => (
             <div
-              key={index}
-              className="bg-slate-800 rounded-2xl p-8 text-center
-              border border-slate-700
-              hover:border-cyan-400
-              hover:-translate-y-2
-              hover:shadow-lg
-              hover:shadow-cyan-500/20
-              transition duration-300"
+              key={metric.label}
+              className="rounded-[2rem] border border-slate-700/80 bg-slate-800/90 p-8 text-center shadow-[0_24px_60px_rgba(2,6,23,0.22)] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_24px_60px_rgba(8,145,178,0.16)]"
             >
-              <h3 className="text-5xl font-bold text-cyan-400">
-                {item.number}
+              <div className="mx-auto h-px w-full max-w-[7rem] bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent" />
+              <h3 className="mt-6 text-5xl font-bold text-cyan-400">
+                {metric.value}
               </h3>
 
-              <p className="text-gray-300 mt-4">
-                {item.title}
-              </p>
+              <p className="mt-4 text-gray-300">{metric.label}</p>
             </div>
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }

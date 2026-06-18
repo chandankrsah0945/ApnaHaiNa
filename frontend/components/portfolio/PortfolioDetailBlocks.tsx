@@ -29,6 +29,11 @@ type GalleryGridProps = {
   images: GalleryImage[];
 };
 
+type MiniPanelProps = {
+  children: React.ReactNode;
+  title: string;
+};
+
 const baseSectionClassName =
   "rounded-[2rem] border border-slate-800/80 bg-slate-950/70 p-7 shadow-[0_20px_50px_rgba(2,6,23,0.26)] backdrop-blur-xl sm:p-8";
 
@@ -112,5 +117,16 @@ export function PortfolioGalleryGrid({ images }: GalleryGridProps) {
         </article>
       ))}
     </div>
+  );
+}
+
+export function PortfolioMiniPanel({ children, title }: MiniPanelProps) {
+  return (
+    <article className="rounded-[1.5rem] border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_16px_40px_rgba(2,6,23,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30 sm:p-6">
+      <h3 className="text-lg font-semibold tracking-[-0.02em] text-white">
+        {title}
+      </h3>
+      <div className="mt-4 text-slate-300">{children}</div>
+    </article>
   );
 }

@@ -1,51 +1,61 @@
+import {
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiReact,
+} from "react-icons/si";
+
+const technologies = [
+  { icon: SiReact, label: "React" },
+  { icon: SiNextdotjs, label: "Next.js" },
+  { icon: SiNodedotjs, label: "Node.js" },
+  { icon: SiMongodb, label: "MongoDB" },
+  { icon: SiPostgresql, label: "PostgreSQL" },
+  { icon: SiOpenai, label: "OpenAI" },
+];
+
 export default function TrustedBy() {
-  const companies = [
-    "Startups",
-    "Businesses",
-    "Entrepreneurs",
-    "Digital Brands",
-    "Agencies",
-    "Enterprises",
-  ];
-
   return (
-    <section className="bg-slate-900 text-white py-20 px-6">
+    <section className="border-y border-slate-800/80 bg-slate-950/95 px-6 py-10 text-white">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+              Trusted Technologies
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
+              Built with modern enterprise technologies
+            </h2>
+            <p className="mt-4 text-slate-400">
+              We use proven frameworks and AI-ready platforms to deliver
+              secure, scalable and production-grade products.
+            </p>
+          </div>
 
-      <div className="max-w-7xl mx-auto">
+          <div className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
+            {technologies.map((technology) => {
+              const Icon = technology.icon;
 
-        <p className="text-cyan-400 uppercase tracking-widest font-semibold text-center">
-          TRUSTED BY
-        </p>
-
-        <h2 className="text-5xl font-bold text-center mt-4">
-          Growing Businesses Choose Us
-        </h2>
-
-        <p className="text-gray-400 text-center max-w-3xl mx-auto mt-6">
-          We help startups, businesses and enterprises build secure,
-          scalable and AI-powered digital products.
-        </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16">
-
-          {companies.map((company, index) => (
-            <div
-              key={index}
-              className="bg-slate-800 border border-slate-700 rounded-2xl py-8 text-center
-              hover:border-cyan-400 hover:-translate-y-1
-              hover:shadow-lg hover:shadow-cyan-500/20
-              transition duration-300"
-            >
-              <span className="text-xl font-bold text-cyan-400">
-                {company}
-              </span>
-            </div>
-          ))}
-
+              return (
+                <article
+                  key={technology.label}
+                  className="group rounded-[1.5rem] border border-slate-800/80 bg-slate-900/80 px-4 py-5 text-center shadow-[0_18px_40px_rgba(2,6,23,0.2)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/35 hover:shadow-[0_18px_40px_rgba(8,145,178,0.16)]"
+                >
+                  <Icon
+                    aria-hidden="true"
+                    className="mx-auto text-2xl text-cyan-200 transition-colors duration-300 group-hover:text-white"
+                  />
+                  <p className="mt-3 text-sm font-semibold text-slate-200">
+                    {technology.label}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

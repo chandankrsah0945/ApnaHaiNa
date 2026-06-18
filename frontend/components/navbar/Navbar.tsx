@@ -1,66 +1,41 @@
 import Link from "next/link";
 
+import BrandMark from "@/components/shared/BrandMark";
+
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* Logo */}
-
-        <Link href="/">
-          <h1 className="text-3xl font-bold text-cyan-400 cursor-pointer">
-            ApnaHaiNa
-          </h1>
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <Link href="/" aria-label="ApnaHaiNa Home">
+          <BrandMark
+            iconClassName="h-11 w-11"
+            textClassName="text-xl font-semibold tracking-[-0.03em] text-white"
+          />
         </Link>
 
-        {/* Menu */}
-
-        <nav className="hidden md:flex items-center gap-8">
-
-          <Link
-            href="/"
-            className="hover:text-cyan-400 transition"
-          >
+        <nav className="hidden items-center gap-8 md:flex">
+          <Link href="/" className="transition hover:text-cyan-400">
             Home
           </Link>
-
-          <Link
-            href="/#about"
-            className="hover:text-cyan-400 transition"
-          >
+          <Link href="/#about" className="transition hover:text-cyan-400">
             About
           </Link>
-
-          <Link
-            href="/#services"
-            className="hover:text-cyan-400 transition"
-          >
+          <Link href="/#services" className="transition hover:text-cyan-400">
             Services
           </Link>
-
-          <Link
-            href="/portfolio"
-            className="hover:text-cyan-400 transition"
-          >
+          <Link href="/portfolio" className="transition hover:text-cyan-400">
             Portfolio
           </Link>
-
-          <Link
-            href="/#contact"
-            className="hover:text-cyan-400 transition"
-          >
+          <Link href="/#contact" className="transition hover:text-cyan-400">
             Contact
           </Link>
-
           <Link
             href="/quote"
-            className="bg-cyan-500 px-5 py-2 rounded-lg hover:bg-cyan-400 transition"
+            className="rounded-full border border-cyan-400/30 bg-cyan-400/90 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-300"
           >
             Get Quote
           </Link>
-
         </nav>
-
       </div>
     </header>
   );

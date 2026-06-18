@@ -1,8 +1,4 @@
-const stats = [
-  { value: "100+", label: "Projects" },
-  { value: "24/7", label: "Support" },
-  { value: "AI", label: "Powered" },
-];
+import { companyMetrics } from "@/components/shared/companyMetrics";
 
 const aboutCards = [
   {
@@ -16,6 +12,12 @@ const aboutCards = [
     title: "Build India's trusted AI, Cyber Security and Technology",
     description: "ecosystem for the future.",
   },
+];
+
+const aboutMetrics = [
+  companyMetrics[0],
+  companyMetrics[2],
+  companyMetrics[3],
 ];
 
 export default function About() {
@@ -48,17 +50,17 @@ export default function About() {
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-5">
-            {stats.map((stat) => (
+            {aboutMetrics.map((metric) => (
               <article
-                key={stat.label}
+                key={metric.label}
                 className="rounded-3xl border border-slate-700/80 bg-slate-950/45 p-5 shadow-[0_20px_40px_rgba(2,6,23,0.24)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="mb-4 h-px w-full bg-gradient-to-r from-cyan-400/80 via-cyan-300/20 to-transparent" />
                 <h3 className="text-3xl font-black tracking-[-0.04em] text-cyan-300 sm:text-4xl">
-                  {stat.value}
+                  {metric.value}
                 </h3>
                 <p className="mt-2 text-sm text-slate-400 sm:text-base">
-                  {stat.label}
+                  {metric.label}
                 </p>
               </article>
             ))}

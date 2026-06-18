@@ -1,24 +1,25 @@
-import Navbar from "@/components/navbar/Navbar";
-import Hero from "@/components/home/Hero";
 import About from "@/components/about/About";
-import Services from "@/components/services/Services";
-import Portfolio from "@/components/portfolio/Portfolio";
-import WhyChoose from "@/components/home/WhyChooseUs";
-import Solutions from "@/components/solutions/Solutions";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
-import Process from "@/components/home/Process";
+import CTA from "@/components/home/CTA";
+import Hero from "@/components/home/Hero";
 import Industries from "@/components/home/Industries";
+import Process from "@/components/home/Process";
+import Stats from "@/components/home/Stats";
 import Testimonials from "@/components/home/Testimonials";
 import TrustedBy from "@/components/home/TrustedBy";
-import CTA from "@/components/home/CTA";
-import Stats from "@/components/home/Stats";
+import WhyChoose from "@/components/home/WhyChooseUs";
+import Navbar from "@/components/navbar/Navbar";
+import Portfolio from "@/components/portfolio/Portfolio";
+import Services from "@/components/services/Services";
+import Solutions from "@/components/solutions/Solutions";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      <TrustedBy />
       <About />
       <Services />
       <Portfolio />
@@ -26,7 +27,6 @@ export default function Home() {
       <Process />
       <Industries />
       <Solutions />
-      <TrustedBy />
       <Testimonials />
       <CTA />
       <Stats />

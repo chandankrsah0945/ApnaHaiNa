@@ -1,209 +1,148 @@
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
+import { companyMetrics } from "@/components/shared/companyMetrics";
 
 export default function QuotePage() {
   return (
     <>
       <Navbar />
 
-      <section className="min-h-screen bg-slate-950 text-white pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto">
-
-          {/* Heading */}
-
+      <section className="min-h-screen bg-slate-950 px-6 pb-20 pt-32 text-white">
+        <div className="mx-auto max-w-6xl">
           <div className="text-center">
-
-            <p className="text-cyan-400 uppercase tracking-[6px] font-semibold">
+            <p className="font-semibold uppercase tracking-[6px] text-cyan-400">
               Start Your Project
             </p>
 
-            <h1 className="text-5xl md:text-7xl font-bold mt-6">
+            <h1 className="mt-6 text-5xl font-bold md:text-7xl">
               Get A
               <span className="text-cyan-400"> Free Quote</span>
             </h1>
 
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto mt-8 leading-8">
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
               Tell us about your project. Our team will analyze your
               requirements and get back to you with the best solution.
             </p>
-
           </div>
 
-          {/* Form */}
-
-          <div className="mt-20 bg-slate-900 border border-slate-800 rounded-3xl p-10">
-
-            <form className="grid md:grid-cols-2 gap-8">
-
-              {/* Full Name */}
-
+          <div className="mt-20 rounded-3xl border border-slate-800 bg-slate-900 p-10">
+            <form className="grid gap-8 md:grid-cols-2">
               <div>
-                <label className="block mb-3 text-gray-300">
-                  Full Name
-                </label>
+                <label className="mb-3 block text-gray-300">Full Name</label>
 
                 <input
                   type="text"
                   placeholder="Enter your full name"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400"
                 />
               </div>
 
-              {/* Company */}
-
               <div>
-                <label className="block mb-3 text-gray-300">
+                <label className="mb-3 block text-gray-300">
                   Company Name
                 </label>
 
                 <input
                   type="text"
                   placeholder="Your company"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400"
                 />
               </div>
 
-              {/* Email */}
-
               <div>
-                <label className="block mb-3 text-gray-300">
+                <label className="mb-3 block text-gray-300">
                   Email Address
                 </label>
 
                 <input
                   type="email"
                   placeholder="example@email.com"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400"
                 />
               </div>
 
-              {/* Phone */}
-
               <div>
-                <label className="block mb-3 text-gray-300">
-                  Phone Number
-                </label>
+                <label className="mb-3 block text-gray-300">Phone Number</label>
 
                 <input
                   type="text"
                   placeholder="+91 XXXXX XXXXX"
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400"
                 />
               </div>
 
-              {/* Service */}
-
               <div>
-                <label className="block mb-3 text-gray-300">
+                <label className="mb-3 block text-gray-300">
                   Service Required
                 </label>
 
-                <select className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none">
-
+                <select className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400">
                   <option>AI Solutions</option>
-
                   <option>Web Development</option>
-
                   <option>Cyber Security</option>
-
                   <option>ERP & CRM</option>
-
                   <option>Custom Software</option>
-
                   <option>Business Automation</option>
-
                 </select>
               </div>
-
-              {/* Budget */}
 
               <div>
-                <label className="block mb-3 text-gray-300">
-                  Budget Range
-                </label>
+                <label className="mb-3 block text-gray-300">Budget Range</label>
 
-                <select className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none">
-
-                  <option>₹10,000 - ₹25,000</option>
-
-                  <option>₹25,000 - ₹50,000</option>
-
-                  <option>₹50,000 - ₹1,00,000</option>
-
-                  <option>₹1,00,000+</option>
-
+                <select className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400">
+                  <option>INR 10,000 - INR 25,000</option>
+                  <option>INR 25,000 - INR 50,000</option>
+                  <option>INR 50,000 - INR 1,00,000</option>
+                  <option>INR 1,00,000+</option>
                 </select>
               </div>
 
-              {/* Description */}
-
               <div className="md:col-span-2">
-
-                <label className="block mb-3 text-gray-300">
+                <label className="mb-3 block text-gray-300">
                   Project Description
                 </label>
 
                 <textarea
                   rows={6}
                   placeholder="Describe your project..."
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 focus:border-cyan-400 outline-none"
-                ></textarea>
-
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-5 py-4 outline-none focus:border-cyan-400"
+                />
               </div>
 
-              {/* Button */}
-
-              <div className="md:col-span-2 text-center">
-
+              <div className="text-center md:col-span-2">
                 <button
                   type="submit"
-                  className="bg-cyan-500 text-black font-semibold px-10 py-4 rounded-xl hover:bg-cyan-400 transition"
+                  className="rounded-xl bg-cyan-500 px-10 py-4 font-semibold text-black transition hover:bg-cyan-400"
                 >
                   Send Request
                 </button>
-
               </div>
-
             </form>
-
           </div>
 
-          {/* Bottom Section */}
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 text-center">
+              <h2 className="text-4xl font-bold text-cyan-400">2 Hours</h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-20">
-
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center">
-              <h2 className="text-4xl font-bold text-cyan-400">
-                24 Hrs
-              </h2>
-
-              <p className="text-gray-400 mt-4">
-                Fast Response
-              </p>
+              <p className="mt-4 text-gray-400">Average Response</p>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center">
+            <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 text-center">
               <h2 className="text-4xl font-bold text-cyan-400">
-                100+
+                {companyMetrics[0].value}
               </h2>
 
-              <p className="text-gray-400 mt-4">
-                Projects Delivered
-              </p>
+              <p className="mt-4 text-gray-400">{companyMetrics[0].label}</p>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center">
+            <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 text-center">
               <h2 className="text-4xl font-bold text-cyan-400">
-                24/7
+                {companyMetrics[2].value}
               </h2>
 
-              <p className="text-gray-400 mt-4">
-                Client Support
-              </p>
+              <p className="mt-4 text-gray-400">{companyMetrics[2].label}</p>
             </div>
-
           </div>
-
         </div>
       </section>
 
